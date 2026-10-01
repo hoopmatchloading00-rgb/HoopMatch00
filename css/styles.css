@@ -1,0 +1,90 @@
+/* ==========================================================================
+   HoopMatch · styles.css  (compartido por todas las páginas)
+   ========================================================================== */
+
+:root {
+  --neon: #bf5fff;
+  --neon-glow: rgba(191, 95, 255, 0.35);
+  --cyan: #00e5ff;
+  --cyan-glow: rgba(0, 229, 255, 0.25);
+  --neon2: #ff3d00;
+  --neon3: #bf5fff;
+  --green: #00ff87;
+  --bg: #07070f;
+  --bg2: #0e0e1a;
+  --bg3: #14141f;
+  --bg4: #1e1e2e;
+  --text: #f0f0f8;
+  --text2: #9090b0;
+  --border: rgba(191, 95, 255, 0.12);
+  --border2: rgba(0, 229, 255, 0.12);
+  --card-radius: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Barlow", sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+img { max-width: 100%; }
+
+/* Foco visible para navegación con teclado */
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+/* ── CURSOR (solo se activa con mouse; ver common.js) ── */
+.cursor { width: 12px; height: 12px; background: var(--neon); border-radius: 50%; position: fixed; top: -100px; left: -100px; pointer-events: none; z-index: 9999; mix-blend-mode: difference; }
+.cursor-ring { width: 36px; height: 36px; border: 1.5px solid var(--neon); border-radius: 50%; position: fixed; top: -100px; left: -100px; pointer-events: none; z-index: 9998; mix-blend-mode: difference; }
+body.custom-cursor, body.custom-cursor * { cursor: none; }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(8, 8, 8, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.logo { font-family: "Bebas Neue", sans-serif; font-size: 2rem; letter-spacing: 3px; color: var(--text); text-decoration: none; }
+.logo span { color: var(--cyan); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-family: "Barlow Condensed", sans-serif; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+.nav-cta { font-family: "Barlow Condensed", sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; background: var(--neon); color: #fff; padding: 0.6rem 1.5rem; border: none; font-weight: 700; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.nav-cta:hover { background: var(--cyan); color: #000; }
+.nav-back { font-family: "Barlow Condensed", sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; background: transparent; color: var(--text2); padding: 0.6rem 1.5rem; border: 1px solid var(--border); font-weight: 700; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.nav-back:hover { border-color: var(--cyan); color: var(--cyan); }
+
+/* ── ANIMACIONES ── */
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── BOTONES COMPARTIDOS ── */
+.btn-price { flex: 1; font-family: "Barlow Condensed", sans-serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; background: var(--neon); color: #fff; padding: 0.7rem; border: none; text-align: center; transition: all 0.2s; text-decoration: none; display: block; }
+.btn-price:hover { background: var(--cyan); color: #000; }
+
+/* ── FOOTER ── */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex; flex-direction: column; gap: 2rem; }
+.footer-main { display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: "Bebas Neue", sans-serif; font-size: 2rem; letter-spacing: 3px; }
+.footer-logo span { color: var(--cyan); }
+.footer-tagline { font-family: "Barlow Condensed", sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text2); margin-top: 0.25rem; }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { font-family: "Barlow Condensed", sans-serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--cyan); }
+.footer-copy { font-size: 0.8rem; color: var(--text2); }
+.footer-disclosure { font-size: 0.75rem; color: var(--text2); line-height: 1.5; max-width: 720px; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+
+/* ── EMOJI / IMAGEN DE ZAPATILLA ── */
+.shoe-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+/* ── MOVIMIENTO REDUCIDO ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-links { display: none; }
+  footer { padding: 3rem 2rem; }
+  .footer-main { flex-direction: column; gap: 2rem; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .footer-disclosure { text-align: center; }
+}

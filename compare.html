@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Compara dos zapatillas de basketball cara a cara: grip, comodidad, amortiguación, durabilidad, peso y recomendación por posición." />
+    <meta name="theme-color" content="#07070f" />
+    <title>HoopMatch — Comparar Zapatillas de Basketball</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/compare.css" />
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <nav>
+      <a href="index.html" class="logo">HOOP<span>MATCH</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="index.html#ranking">Ranking</a></li>
+        <li><a href="compare.html" class="active">Comparar</a></li>
+        <li><a href="quiz.html">Encuentra la tuya</a></li>
+      </ul>
+      <a href="index.html" class="nav-back">← Volver</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="page-header">
+      <div class="page-header-bg"></div>
+      <div class="page-header-grid"></div>
+      <div class="page-header-inner">
+        <div class="page-label">Herramienta de comparativa</div>
+        <h1 class="page-title">CARA A <span class="accent">CARA</span><br /><span class="dim">COMPARADOR</span></h1>
+        <p class="page-sub">Selecciona dos modelos y obtén un análisis completo de rendimiento real, estadísticas y recomendaciones por posición.</p>
+      </div>
+    </header>
+
+    <!-- PRESETS (se generan desde js/compare.js) -->
+    <div class="presets-section">
+      <div class="presets-label">Comparativas populares</div>
+      <div class="presets-list" id="presetsList"></div>
+    </div>
+
+    <!-- SELECTOR -->
+    <div class="selector-section">
+      <div class="selector-grid">
+        <div class="selector-panel panel-a">
+          <div class="panel-label la"><div class="dot dot-a"></div>Zapatilla A</div>
+          <div class="select-wrap">
+            <select class="shoe-select" id="selectA" aria-label="Zapatilla A">
+              <option value="">— Seleccionar modelo —</option>
+            </select>
+          </div>
+          <div class="selected-shoe-preview" id="previewA">
+            <div class="preview-emoji" id="previewEmojiA"></div>
+            <div class="preview-info">
+              <div class="preview-brand" id="previewBrandA"></div>
+              <div class="preview-name" id="previewNameA"></div>
+            </div>
+            <div>
+              <div class="preview-score sa" id="previewScoreA"></div>
+              <div class="preview-score-label">Total</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="selector-middle">
+          <div class="vs-badge">VS</div>
+          <button type="button" class="compare-btn" id="compareBtn" disabled>Comparar ahora</button>
+          <div class="compare-hint" id="compareHint" aria-live="polite"></div>
+        </div>
+
+        <div class="selector-panel panel-b">
+          <div class="panel-label lb"><div class="dot dot-b"></div>Zapatilla B</div>
+          <div class="select-wrap">
+            <select class="shoe-select" id="selectB" aria-label="Zapatilla B">
+              <option value="">— Seleccionar modelo —</option>
+            </select>
+          </div>
+          <div class="selected-shoe-preview" id="previewB">
+            <div class="preview-emoji" id="previewEmojiB"></div>
+            <div class="preview-info">
+              <div class="preview-brand" id="previewBrandB"></div>
+              <div class="preview-name" id="previewNameB"></div>
+            </div>
+            <div>
+              <div class="preview-score sb" id="previewScoreB"></div>
+              <div class="preview-score-label">Total</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTADOS -->
+    <div id="compareResults">
+      <div class="results-divider">
+        <div class="divider-line"></div>
+        <div class="divider-label">Resultado</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div id="winnerBanner" class="winner-banner">
+        <div>
+          <div class="winner-label">🏆 Ganador general</div>
+          <div class="winner-name" id="winnerName"></div>
+          <div class="winner-reason" id="winnerReason"></div>
+        </div>
+        <div class="winner-score-box">
+          <div class="winner-score-big" id="winnerScore"></div>
+          <div class="winner-score-sub">Puntuación media</div>
+        </div>
+      </div>
+
+      <div class="compare-stats-section">
+        <div class="results-section-title">Comparativa por categoría</div>
+        <div id="dualBars"></div>
+      </div>
+
+      <div class="radar-section">
+        <div class="results-section-title">Gráfico radial</div>
+        <div class="radar-wrap">
+          <canvas id="radarCanvas" width="480" height="480" role="img" aria-label="Gráfico radial comparando las dos zapatillas"></canvas>
+        </div>
+      </div>
+
+      <div class="specs-table-section">
+        <div class="results-section-title">Especificaciones técnicas completas</div>
+        <div style="overflow-x: auto">
+          <table class="specs-table" id="specsTable">
+            <thead>
+              <tr>
+                <th>Especificación</th>
+                <th id="thA">—</th>
+                <th id="thB">—</th>
+              </tr>
+            </thead>
+            <tbody id="specsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pros-cons-grid" id="prosConsGrid"></div>
+
+      <div class="rec-section">
+        <div class="results-section-title">Recomendación por posición</div>
+        <div class="rec-grid" id="recGrid"></div>
+      </div>
+
+      <div class="cta-row" id="ctaRow"></div>
+    </div>
+
+    <footer>
+      <div class="footer-main">
+        <div>
+          <div class="footer-logo">HOOP<span>MATCH</span></div>
+          <div class="footer-tagline">Rendimiento real. Sin filtros.</div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#reviews">Reviews</a>
+          <a href="index.html#ranking">Ranking</a>
+          <a href="compare.html">Comparar</a>
+          <a href="quiz.html">Encuentra la tuya</a>
+          <a href="#disclosure">Afiliados</a>
+        </div>
+        <div class="footer-copy">© 2026 HoopMatch</div>
+      </div>
+      <p class="footer-disclosure" id="disclosure">
+        Aviso de afiliados: HoopMatch puede recibir una comisión por las compras realizadas a través de los enlaces de este sitio, sin costo adicional para ti. Las puntuaciones y opiniones son propias y no dependen de esas comisiones.
+      </p>
+    </footer>
+
+    <script src="js/shoes.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/compare.js"></script>
+  </body>
+</html>

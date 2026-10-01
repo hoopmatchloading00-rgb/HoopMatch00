@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reviews de zapatillas de basketball enfocadas en rendimiento real: grip, comodidad y durabilidad probados en cancha." />
+    <meta name="theme-color" content="#07070f" />
+    <title>HoopMatch — Reviews de Zapatillas de Basketball</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <nav>
+      <a href="index.html" class="logo">HOOP<span>MATCH</span></a>
+      <ul class="nav-links">
+        <li><a href="#reviews" class="active">Reviews</a></li>
+        <li><a href="#ranking">Ranking</a></li>
+        <li><a href="compare.html">Comparar</a></li>
+        <li><a href="quiz.html">Encuentra la tuya</a></li>
+      </ul>
+      <a href="compare.html" class="nav-cta">⚡ Comparar</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-badge">Reviews reales de cancha</div>
+        <h1>LAS<br />MEJORES<br /><span class="accent">ZAPATILLAS</span><br /><span class="outline">DE BASKET</span></h1>
+        <p class="hero-sub">Reviews enfocadas en rendimiento real. Grip, comodidad y durabilidad probados en cancha. Sin filtros.</p>
+        <div class="hero-actions">
+          <a href="#ranking" class="btn-primary">Ver Ranking 🔥</a>
+          <a href="#reviews" class="btn-secondary">Explorar Reviews</a>
+        </div>
+      </div>
+
+      <!-- Órbita decorativa: 8 zapatillas en un solo anillo, giran juntas y se mantienen derechas.
+           Cada brazo define su ángulo con --a (0, 45, 90 ... 315). -->
+      <div class="orbit-wrap" aria-hidden="true">
+        <div class="orbit-ring ring-deco-3"></div>
+        <div class="orbit-ring ring-deco-2"></div>
+        <div class="orbit-ring ring-deco-1"></div>
+        <div class="orbit-dot" style="width:5px;height:5px;top:35px;left:55px;background:var(--cyan);animation-duration:3.2s;"></div>
+        <div class="orbit-dot" style="width:4px;height:4px;top:70px;right:45px;background:var(--neon);animation-duration:2.8s;animation-delay:-1s;"></div>
+        <div class="orbit-dot" style="width:5px;height:5px;bottom:50px;left:75px;background:var(--cyan);animation-duration:4s;animation-delay:-2s;"></div>
+        <div class="orbit-dot" style="width:3px;height:3px;bottom:65px;right:55px;background:var(--neon);animation-duration:3.5s;animation-delay:-0.5s;"></div>
+        <div class="orbit-glow"></div>
+        <div class="orbit-center">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="36" cy="36" r="34" fill="#E8601A" stroke="#C04A00" stroke-width="2" />
+            <path d="M36 2 Q48 20 48 36 Q48 52 36 70" stroke="#7a2800" stroke-width="2.5" fill="none" />
+            <path d="M36 2 Q24 20 24 36 Q24 52 36 70" stroke="#7a2800" stroke-width="2.5" fill="none" />
+            <path d="M2 36 Q20 24 36 24 Q52 24 70 36" stroke="#7a2800" stroke-width="2.5" fill="none" />
+            <path d="M2 36 Q20 48 36 48 Q52 48 70 36" stroke="#7a2800" stroke-width="2.5" fill="none" />
+            <circle cx="36" cy="36" r="34" fill="none" stroke="#C04A00" stroke-width="2" />
+          </svg>
+        </div>
+        <div class="orbit-ring-system">
+          <div class="orbit-arm" style="--a:0deg"><div class="orbit-node"><img src="img/zapa1.png" alt="" decoding="async" /></div></div>
+          <div class="orbit-arm" style="--a:45deg"><div class="orbit-node"><img src="img/zapa2.png" alt="" decoding="async" /></div></div>
+          <div class="orbit-arm" style="--a:90deg"><div class="orbit-node"><img src="img/zapa3.png" alt="" decoding="async" /></div></div>
+          <div class="orbit-arm" style="--a:135deg"><div class="orbit-node"><img src="img/zapa4.png" alt="" decoding="async" /></div></div>
+          <div class="orbit-arm" style="--a:180deg"><div class="orbit-node"><img src="img/zapa5.png" alt="" decoding="async" /></div></div>
+          <div class="orbit-arm" style="--a:225deg"><div class="orbit-node"><img src="img/zapa6.png" alt="" decoding="async" /></div></div>
+          <div class="orbit-arm" style="--a:270deg"><div class="orbit-node"><img src="img/zapa7.png" alt="" decoding="async" /></div></div>
+          <div class="orbit-arm" style="--a:315deg"><div class="orbit-node"><img src="img/zapa8.png" alt="" decoding="async" /></div></div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- TICKER (se genera desde js/shoes.js) -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="section-label">Reviews completas</div>
+      <h2 class="section-title reveal">TODOS LOS <span class="dim">MODELOS</span></h2>
+
+      <div class="filter-wrap reveal" id="filterWrap">
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+        <button type="button" class="filter-btn" data-filter="grip" aria-pressed="false">Mejor Grip</button>
+        <button type="button" class="filter-btn" data-filter="precio" aria-pressed="false">Calidad/Precio</button>
+        <button type="button" class="filter-btn" data-filter="exterior" aria-pressed="false">Exteriores</button>
+        <button type="button" class="filter-btn" data-filter="base" aria-pressed="false">Para Bases</button>
+        <button type="button" class="filter-btn" data-filter="pivot" aria-pressed="false">Para Pivots</button>
+      </div>
+
+      <div class="cards-grid" id="cardsGrid"></div>
+
+      <div class="compare-banner reveal">
+        <h3>¿DUDAS ENTRE <span>DOS MODELOS</span>?</h3>
+        <p>Usa nuestra herramienta de comparativa y decide con datos reales de cancha</p>
+        <a href="compare.html" class="compare-banner-btn">⚡ Ir al Comparador</a>
+      </div>
+
+      <div class="compare-banner reveal">
+        <h3>¿NO SABES <span>CUÁL ELEGIR</span>?</h3>
+        <p>Responde 10 preguntas sobre tu juego, tu cancha y tu presupuesto, y te decimos cuál encaja contigo</p>
+        <a href="quiz.html" class="compare-banner-btn">🎯 Hacer el test</a>
+      </div>
+    </section>
+
+    <!-- RANKING -->
+    <section id="ranking" class="ranking-section">
+      <div class="section-label">Ranking actualizado</div>
+      <h2 class="section-title reveal">RANKING <span class="dim">OFICIAL</span></h2>
+
+      <div class="ranking-tabs reveal" id="rankingTabs" role="tablist">
+        <button type="button" class="tab-btn active" data-tab="general" role="tab" aria-selected="true">General</button>
+        <button type="button" class="tab-btn" data-tab="precio" role="tab" aria-selected="false">Calidad/Precio</button>
+        <button type="button" class="tab-btn" data-tab="exterior" role="tab" aria-selected="false">Exteriores</button>
+      </div>
+
+      <div id="tab-general" class="ranking-list"></div>
+      <div id="tab-precio" class="ranking-list" hidden></div>
+      <div id="tab-exterior" class="ranking-list" hidden></div>
+
+      <p class="ranking-note">El ranking se calcula automáticamente con las puntuaciones de cada review.</p>
+    </section>
+
+    <footer>
+      <div class="footer-main">
+        <div>
+          <div class="footer-logo">HOOP<span>MATCH</span></div>
+          <div class="footer-tagline">Rendimiento real. Sin filtros.</div>
+        </div>
+        <div class="footer-links">
+          <a href="#reviews">Reviews</a>
+          <a href="#ranking">Ranking</a>
+          <a href="compare.html">Comparar</a>
+          <a href="quiz.html">Encuentra la tuya</a>
+          <a href="#disclosure">Afiliados</a>
+        </div>
+        <div class="footer-copy">© 2026 HoopMatch</div>
+      </div>
+      <p class="footer-disclosure" id="disclosure">
+        Aviso de afiliados: HoopMatch puede recibir una comisión por las compras realizadas a través de los enlaces de este sitio, sin costo adicional para ti. Las puntuaciones y opiniones son propias y no dependen de esas comisiones.
+      </p>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button type="button" class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+        <div id="modalInner"></div>
+      </div>
+    </div>
+
+    <script src="js/shoes.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
