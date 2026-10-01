@@ -31,7 +31,13 @@ const POSITION_ICONS = { base: "🏃", escolta: "🏹", alero: "🦅", pivot: "�
 
 /*
   Campos por zapatilla
-  - scores:   6 puntuaciones de 0 a 10 (el total se CALCULA, no se escribe)
+  - scores:   escribe SOLO grip, comodidad, amortiguacion, durabilidad y estilo (0 a 10, mejor en pasos de 0.5).
+              "rendimiento" se CALCULA solo (ver AUTO_RENDIMIENTO): déjalo en null o ponle cualquier valor, se sobrescribe.
+  - status / confidence / sources / lastVerified: trazabilidad de las notas. Si no los pones, la zapatilla queda
+              como status "provisional" y confidence "baja" (la web muestra "En revisión").
+              Para verificarla: ≥3 reviews independientes en sources.lab / sources.playtests (URLs),
+              status: "verificada", confidence: "media" | "alta" y lastVerified: "AAAA-MM-DD".
+  - supportScore: (opcional) nota 0-10 de soporte/estabilidad. Si falta, se deriva de ankle.level.
   - courts:   agarre por tipo de cancha (0-10). El texto Sí / Regular / No se deriva de aquí.
               OJO: son valores estimados a partir de tus pros/contras. Reemplázalos con tus tests reales.
   - weightG:  peso en gramos (número, para el futuro algoritmo del quiz)
@@ -682,6 +688,55 @@ const SHOES_ALL = [
     },
 ];
 
+/* ---------- Método de puntuación (una sola fuente para todas las páginas) ---------- */
+
+const SCORE_METHOD = {
+    version: "1.0",
+    reviewerMinimum: 3,
+    note: "Puntuaciones propias de HoopMatch, calculadas a partir de mediciones de laboratorio y del consenso de al menos tres reviews especializadas. No son notas proporcionadas por las marcas.",
+    provisionalNote: "Puntuaciones en revisión: aún no tienen las fuentes mínimas verificadas.",
+};
+
+const CONFIDENCE_LABELS = { baja: "Confianza baja", media: "Confianza media", alta: "Confianza alta" };
+
+/* true  → rendimiento = media ponderada de abajo (recomendado).
+   false → se usa el rendimiento que escribas a mano en cada zapatilla. */
+const AUTO_RENDIMIENTO = true;
+const RENDIMIENTO_WEIGHTS = { grip: 0.28, amortiguacion: 0.24, comodidad: 0.18, durabilidad: 0.15, soporte: 0.15 };
+
+/* Soporte/estabilidad 0-10: tu supportScore si existe; si no, se deriva del corte (ankle.level 1-3 → 6.3-8.8).
+   Es una estimación: reemplázala con supportScore cuando tengas datos de las reviews. */
+function supportScore(shoe) {
+    if (typeof shoe.supportScore === "number") return shoe.supportScore;
+    if (!shoe.ankle || typeof shoe.ankle.level !== "number") return null;
+    return 5 + shoe.ankle.level * 1.25;
+}
+
+/* Rendimiento global ponderado. Devuelve null si falta algún dato (la zapatilla queda pendiente). */
+function computeRendimiento(shoe) {
+    if (!shoe.scores) return null;
+    let total = 0;
+    for (const [k, w] of Object.entries(RENDIMIENTO_WEIGHTS)) {
+        const v = k === "soporte" ? supportScore(shoe) : shoe.scores[k];
+        if (typeof v !== "number" || Number.isNaN(v)) return null;
+        total += v * w;
+    }
+    return Math.round(total * 10) / 10;
+}
+
+/* Valores por defecto de trazabilidad + rendimiento calculado (antes de separar completas y pendientes) */
+SHOES_ALL.forEach(s => {
+    s.status = s.status ?? "provisional";
+    s.confidence = s.confidence ?? "baja";
+    s.sources = s.sources ?? { lab: [], playtests: [] };
+    s.lastVerified = s.lastVerified ?? null;
+    if (AUTO_RENDIMIENTO && s.scores) s.scores.rendimiento = computeRendimiento(s);
+});
+
+function isProvisional(shoe) {
+    return shoe.status !== "verificada";
+}
+
 /* ---------- Zapatillas completas vs pendientes ---------- */
 
 /* Campos que el sitio necesita para mostrar una zapatilla sin errores */
@@ -712,8 +767,10 @@ const SHOES_BY_ID = Object.fromEntries(SHOES.map(s => [s.id, s]));
 
 /* ---------- Cálculos derivados (una sola fórmula para todo el sitio) ---------- */
 
-/* Puntuación total = promedio de las 6 categorías */
+/* Puntuación total. Con AUTO_RENDIMIENTO es el rendimiento ponderado (grip 28%, amortiguación 24%,
+   comodidad 18%, durabilidad 15%, soporte 15%). Si lo desactivas, vuelve al promedio de las 6 categorías. */
 function avgScore(shoe) {
+    if (AUTO_RENDIMIENTO) return shoe.scores.rendimiento;
     return STAT_KEYS.reduce((sum, k) => sum + shoe.scores[k], 0) / STAT_KEYS.length;
 }
 

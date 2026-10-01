@@ -271,6 +271,7 @@ function mainCardHTML(r, second) {
         <div class="result-brand">${s.brand}</div>
         <h3 class="result-name">${s.name}</h3>
         <p class="result-tagline">${s.tagline}</p>
+        <div class="result-conf">${confidenceBadge(s)}</div>
         <div class="match">
           <div class="match-num">${r.match}<span>%</span></div>
           <div class="match-side">
@@ -304,6 +305,7 @@ function runnerCardHTML(r, pos, first) {
         </div>
         <div class="runner-match">${r.match}%<small>afinidad</small></div>
       </div>
+      <div class="result-conf">${confidenceBadge(s)}</div>
       ${list(r.reasons.slice(0, 2), "reason-list")}
       ${r.warnings.length ? list(r.warnings.slice(0, 2), "warn-list") : ""}
       <div class="result-meta"><strong>${formatPrice(s.price)}</strong> · ${s.weightG} g</div>
@@ -335,7 +337,7 @@ function resultsHTML({ results, stretch, budget }) {
     <div class="results-head">
       <div class="quiz-label">Tu resultado</div>
       <h2 class="results-title">TUS ZAPATILLAS <span class="dim">IDEALES</span></h2>
-      <p class="results-sub">Calculado con tus 10 respuestas y las puntuaciones de cada review.</p>
+      <p class="results-sub">Calculado con tus ${QUESTIONS.length} respuestas y las puntuaciones propias de HoopMatch.</p>
       <div class="profile-chips">${chips}</div>
     </div>`;
 
@@ -345,7 +347,8 @@ function resultsHTML({ results, stretch, budget }) {
       <button type="button" class="qbtn qbtn-ghost qbtn-small" data-action="restart">↻ Repetir el test</button>
       <button type="button" class="qbtn qbtn-ghost qbtn-small" data-action="copy">🔗 Copiar enlace</button>
     </div>
-    <p class="results-note">La afinidad es una estimación relativa al catálogo actual (${SHOES.length} modelos), no una garantía de ajuste: pruébate las zapatillas siempre que puedas. Nada de lo que respondes se guarda ni se envía.</p>`;
+    <p class="results-note">La afinidad es una estimación relativa al catálogo actual (${SHOES.length} modelos), no una garantía de ajuste: pruébate las zapatillas siempre que puedas. Nada de lo que respondes se guarda ni se envía.</p>
+    <p class="method-note">${methodNoteHTML(SHOES)}</p>`;
 
   if (!results.length) {
     return `${head}

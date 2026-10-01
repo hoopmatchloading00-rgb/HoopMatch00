@@ -112,20 +112,21 @@ function buildWinnerBanner(a, b) {
   if (Math.abs(aAvg - bAvg) < 0.05) {
     nameEl.textContent = "Empate técnico";
     nameEl.style.color = "var(--neon)";
-    scoreEl.textContent = aAvg.toFixed(2);
+    scoreEl.textContent = fmt(aAvg);
     scoreEl.style.color = "var(--neon)";
-    $("winnerReason").textContent = `${a.name} y ${b.name} están igualadas en puntuación media`;
+    $("winnerReason").textContent = `${a.name} y ${b.name} están igualadas en rendimiento global`;
     return;
   }
 
   const aWins = aAvg > bAvg;
   const winner = aWins ? a : b;
   const color = aWins ? "var(--col-a)" : "var(--col-b)";
-  const topKey = STAT_KEYS.reduce((best, k) => (winner.scores[k] > winner.scores[best] ? k : best), STAT_KEYS[0]);
+  const cats = STAT_KEYS.filter((k) => k !== "rendimiento"); /* rendimiento es el total, no una categoría */
+  const topKey = cats.reduce((best, k) => (winner.scores[k] > winner.scores[best] ? k : best), cats[0]);
 
   nameEl.textContent = winner.name;
   nameEl.style.color = color;
-  scoreEl.textContent = Math.max(aAvg, bAvg).toFixed(2);
+  scoreEl.textContent = fmt(Math.max(aAvg, bAvg));
   scoreEl.style.color = color;
   $("winnerReason").textContent = `Destacada en ${STAT_LABELS[topKey]} (${fmt(winner.scores[topKey])}/10) · Precio aprox. ${formatPrice(winner.price)}`;
 }
@@ -278,6 +279,7 @@ function buildSpecsTable(a, b) {
   const text = (v) => `<span style="color:var(--text)">${v}</span>`;
 
   const specRows = [
+    ["Fiabilidad de las notas", a, b, confidenceBadge],
     ["Peso", `${a.weightG} g`, `${b.weightG} g`, text],
     ["Tipo de suela", a.sole, b.sole, text],
     ["Tecnología cushion", a.cushion, b.cushion, text],
@@ -289,6 +291,7 @@ function buildSpecsTable(a, b) {
   ].map(([label, vA, vB, render]) => `<tr><td>${label}</td><td>${render(vA)}</td><td>${render(vB)}</td></tr>`);
 
   $("specsBody").innerHTML = statRows.concat(specRows).join("");
+  $("methodNote").innerHTML = methodNoteHTML([a, b]);
 }
 
 /* ---------- PROS / CONTRAS ---------- */

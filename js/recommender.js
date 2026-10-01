@@ -229,7 +229,7 @@ function evaluate(s, a, profile, table) {
     contrib.sort((x, y) => y.score - x.score).slice(0, 2 - reasons.length).forEach((c) => reasons.push(reasonFor(c.k, s, a)));
   }
 
-  return { shoe: s, match, reasons, warnings };
+  return { shoe: s, match, reasons, warnings, provisional: isProvisional(s) };
 }
 
 /* ---------- API pública ---------- */

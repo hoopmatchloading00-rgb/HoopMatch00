@@ -51,6 +51,7 @@ function cardHTML(s, i) {
       <div class="card-body">
         <div class="card-brand">${s.brand}</div>
         <h3 class="card-name">${s.name}</h3>
+        <div class="card-conf">${confidenceBadge(s)}</div>
         <div class="card-stats">${stats}</div>
         <div class="card-player">${players}</div>
         <div class="card-footer">
@@ -95,7 +96,9 @@ function initFilters() {
 /* ---------- RANKINGS ---------- */
 
 function topStat(s) {
-  return STAT_KEYS.reduce((best, k) => (s.scores[k] > s.scores[best] ? k : best), STAT_KEYS[0]);
+  /* rendimiento es un total calculado, no una categoría: se excluye */
+  const keys = STAT_KEYS.filter((k) => k !== "rendimiento");
+  return keys.reduce((best, k) => (s.scores[k] > s.scores[best] ? k : best), keys[0]);
 }
 
 function rankItemHTML(pos, s, tags, scores) {
@@ -186,7 +189,9 @@ function openModal(id) {
     </div>
     <div class="modal-body">
       <div class="modal-section-title">Puntuaciones · Total ${fmt(avgScore(s))}/10</div>
+      <div class="card-conf">${confidenceBadge(s)}</div>
       <div class="modal-scores">${scores}</div>
+      ${sourcesHTML(s)}
       <div class="modal-section-title">Pros y Contras</div>
       <div class="pros-cons">
         <ul class="pros-list">${s.pros.map((p) => `<li>${p}</li>`).join("")}</ul>
@@ -239,6 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderTicker();
   renderCards();
   renderRankings();
+  const note = $("#methodNote");
+  if (note) note.innerHTML = methodNoteHTML(SHOES);
   initFilters();
   initTabs();
   initModal();

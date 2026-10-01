@@ -23,6 +23,31 @@ function affiliateAttrs(shoe) {
   return `href="${url}" target="_blank" rel="sponsored noopener noreferrer"`;
 }
 
+/* ---------- Confianza de las notas ---------- */
+
+/* Insignia "En revisión · Confianza baja" (estilos en css/confidence.css) */
+function confidenceBadge(shoe) {
+  const level = shoe.confidence || "baja";
+  const prefix = isProvisional(shoe) ? "En revisión · " : "";
+  return `<span class="conf-badge ${level}">${prefix}${CONFIDENCE_LABELS[level]}</span>`;
+}
+
+/* Lista de fuentes enlazadas (o aviso si aún no hay) */
+function sourcesHTML(shoe) {
+  const urls = [...shoe.sources.lab, ...shoe.sources.playtests];
+  if (!urls.length) return `<div class="source-list">Fuentes aún por añadir (mínimo ${SCORE_METHOD.reviewerMinimum} reviews independientes).</div>`;
+  const link = (u) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${u.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]}</a>`;
+  const checked = shoe.lastVerified ? ` · verificado ${shoe.lastVerified}` : "";
+  return `<div class="source-list"><strong>Fuentes:</strong> ${urls.map(link).join(" · ")}${checked}</div>`;
+}
+
+/* Nota "Cómo puntuamos" para el pie de cualquier página */
+function methodNoteHTML(shoes = SHOES) {
+  const anyProvisional = shoes.some(isProvisional);
+  return `<strong>Cómo puntuamos.</strong> ${SCORE_METHOD.note}` +
+    (anyProvisional ? ` <span class="method-warn">${SCORE_METHOD.provisionalNote}</span>` : "");
+}
+
 /* ---------- Cursor personalizado (solo con mouse) ---------- */
 
 (function initCursor() {

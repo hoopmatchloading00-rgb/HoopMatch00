@@ -7,13 +7,14 @@
 
 ## ¿Qué es HoopMatch?
 
-HoopMatch es una web de reviews de zapatillas de basketball con foco en rendimiento real — no solo estética. Cada modelo es evaluado en 4 métricas clave y clasificado según tipo de jugador, para que encuentres exactamente lo que necesitas según tu posición y estilo de juego.
+HoopMatch es una web de reviews de zapatillas de basketball con foco en rendimiento real — no solo estética. Cada modelo se puntúa en 5 categorías (grip, comodidad, amortiguación, durabilidad y estilo) más un rendimiento global calculado, y se clasifica según tipo de jugador, para que encuentres exactamente lo que necesitas según tu posición y estilo de juego.
 
 ---
 
 ## ✨ Features
 
-- 🔍 **Reviews completas** con puntuaciones en Grip, Comodidad, Durabilidad y Estilo
+- 🔍 **Reviews completas** con puntuaciones, nivel de confianza y fuentes
+- 🎯 **Quiz de recomendación** (`quiz.html`): 10 preguntas → zapatillas que encajan con tu perfil
 - 👤 **Sistema de tipo de jugador** — Base, Escolta, Alero, Pivot
 - 🏆 **Ranking oficial** con tabs: General / Calidad-Precio / Exteriores
 - ⚡ **Comparador cara a cara** entre modelos
@@ -27,15 +28,17 @@ HoopMatch es una web de reviews de zapatillas de basketball con foco en rendimie
 ## 🗂️ Estructura del proyecto
 
 ```
-hoopmatch/
-├── index.html          # Homepage — hero, cards, ranking, VS
-├── comparar.html       # Vista de comparaciones directas
-├── data/
-│   └── zapatillas.js   # "Base de datos" — array con todos los modelos
-└── img/
-    ├── kyrie-infinity.png
-    ├── harden-vol-7.png
-    └── ...
+HoopMatch/
+├── index.html        # Home: hero, cards, ranking
+├── compare.html      # Comparador cara a cara
+├── quiz.html         # Test de recomendación
+├── css/              # styles.css (compartido) + home / compare / quiz
+├── js/
+│   ├── shoes.js      # ÚNICA fuente de datos + método de puntuación
+│   ├── common.js     # utilidades compartidas
+│   ├── home.js · compare.js · quiz.js
+│   └── recommender.js  # motor del quiz
+└── img/              # fotos de zapatillas
 ```
 
 ---
@@ -45,7 +48,7 @@ hoopmatch/
 | Capa     | Tecnología                                          |
 | -------- | --------------------------------------------------- |
 | Frontend | HTML5 + CSS3 + JavaScript (Vanilla)                 |
-| Datos    | Array de objetos JS (`data/zapatillas.js`)          |
+| Datos    | Array de objetos JS (`js/shoes.js`)                 |
 | Fuentes  | Google Fonts — Bebas Neue, Barlow Condensed, Barlow |
 | Hosting  | Vercel / Netlify                                    |
 | Backend  | ❌ No requerido                                     |
@@ -71,36 +74,29 @@ hoopmatch/
 
 ---
 
+## 📊 Sistema de puntuación
+
+Las notas son **propias de HoopMatch** (0–10, en pasos de 0.5), calculadas a partir de mediciones de laboratorio y del consenso de **al menos 3 reviews independientes**. No son notas de las marcas.
+
+- Se escriben 5 notas: `grip`, `comodidad`, `amortiguacion`, `durabilidad`, `estilo`.
+- `rendimiento` se **calcula solo**: grip 28 % · amortiguación 24 % · comodidad 18 % · durabilidad 15 % · soporte 15 % (pesos en `RENDIMIENTO_WEIGHTS`, interruptor `AUTO_RENDIMIENTO`).
+- Cada zapatilla lleva `status`, `confidence`, `sources` y `lastVerified`. Sin fuentes verificadas, la web la muestra como **"En revisión · Confianza baja"**.
+- Una zapatilla con `scores`, `courts`, `positions`, `price` o `weightG` sin completar (`null`) no se muestra todavía; la consola del navegador avisa qué falta.
+
+---
+
 ## 📦 Agregar una zapatilla nueva
 
-Abre `data/zapatillas.js` y agrega un objeto al array:
+Abre `js/shoes.js`, copia un objeto de `SHOES_ALL` y cambia los valores. Los campos están documentados en el comentario de arriba del archivo. Para marcarla como verificada:
 
 ```javascript
-{
-  id: "nombre-modelo",           // slug único, sin espacios
-  marca: "Nike",
-  nombre: "Nombre del Modelo",
-  precio: 130,                   // precio en USD
-  imagen: "img/nombre.png",
-  descripcion: "Descripción corta para la card.",
-  scores: {
-    grip: 9.5,
-    comodidad: 8.8,
-    durabilidad: 8.2,
-    estilo: 9.0
-  },
-  jugadores: {
-    base: "yes",      // "yes" | "ok" | "no"
-    escolta: "yes",
-    alero: "ok",
-    pivot: "no"
-  },
-  pros: ["Pro 1", "Pro 2", "Pro 3"],
-  cons: ["Con 1", "Con 2"],
-  tags: ["grip", "exterior", "base"],   // para filtros
-  badge: "trending",                    // "trending" | "top" | "new"
-  afiliado: "https://tu-link-afiliado.com"
-}
+status: "verificada",
+confidence: "media",            // "baja" | "media" | "alta"
+sources: {
+  lab: ["https://…"],           // mediciones de laboratorio
+  playtests: ["https://…", "https://…", "https://…"],  // ≥3 reviews independientes
+},
+lastVerified: "2026-10-01",
 ```
 
 ---
@@ -127,10 +123,11 @@ python -m http.server 8080
 - [x] Diseño urbano con paleta morado + cian
 - [x] Filtros por categoría
 - [x] Modal de detalle por zapatilla
-- [ ] `comparar.html` — vista de comparaciones
-- [ ] Refactorizar cards para leer desde `data/zapatillas.js`
+- [x] `compare.html` — comparador interactivo
+- [x] Cards, ranking y quiz leen de `js/shoes.js`
+- [x] `quiz.html` — test de recomendación
+- [ ] Completar fuentes y verificar las notas de cada modelo
 - [ ] Páginas individuales por zapatilla
-- [ ] Comparador interactivo (selección de modelos)
 - [ ] Ranking por votación de usuarios
 - [ ] Filtros por posición, precio y superficie
 
