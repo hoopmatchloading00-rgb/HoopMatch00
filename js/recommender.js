@@ -18,7 +18,7 @@
 /* Peso base de cada atributo (importancia inicial) */
 const BASE_WEIGHTS = {
   grip: 1, comodidad: 1, amortiguacion: 1, durabilidad: 1,
-  estilo: 0.5, rendimiento: 1, soporte: 1, ligereza: 1, cancha: 1,
+  rendimiento: 1, soporte: 1, ligereza: 1, cancha: 1,
 };
 
 /* Cuánto suma cada respuesta a la importancia de cada atributo */
@@ -130,7 +130,6 @@ function rawAttrs(s, courtMode) {
     comodidad: s.scores.comodidad,
     amortiguacion: s.scores.amortiguacion,
     durabilidad: s.scores.durabilidad,
-    estilo: s.scores.estilo,
     rendimiento: s.scores.rendimiento,
     soporte: s.ankle.level,
     ligereza: -s.weightG,
@@ -190,7 +189,6 @@ function reasonFor(k, s, a) {
     case "amortiguacion": return `Amortiguación ${fmt(s.scores.amortiguacion)}/10 para absorber el impacto`;
     case "comodidad": return `Comodidad ${fmt(s.scores.comodidad)}/10 partido tras partido`;
     case "durabilidad": return `Durabilidad ${fmt(s.scores.durabilidad)}/10${a.frecuencia === "intenso" ? ": aguanta tu ritmo de juego" : ""}`;
-    case "estilo": return `Estilo ${fmt(s.scores.estilo)}/10`;
     case "rendimiento": return `Rendimiento ${fmt(s.scores.rendimiento)}/10 en cancha`;
     case "soporte": return `Soporte de tobillo ${s.ankle.label.toLowerCase()}, como lo necesitas`;
     case "ligereza": return `Peso de ${s.weightG} g, acorde a cómo juegas`;
@@ -229,7 +227,7 @@ function evaluate(s, a, profile, table) {
     contrib.sort((x, y) => y.score - x.score).slice(0, 2 - reasons.length).forEach((c) => reasons.push(reasonFor(c.k, s, a)));
   }
 
-  return { shoe: s, match, reasons, warnings, provisional: isProvisional(s) };
+  return { shoe: s, match, reasons, warnings };
 }
 
 /* ---------- API pública ---------- */

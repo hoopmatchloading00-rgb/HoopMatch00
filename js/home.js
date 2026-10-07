@@ -1,6 +1,6 @@
 /* ==========================================================================
    HoopMatch · home.js  (solo index.html)
-   Todo se genera desde SHOES (js/shoes.js): no hay datos duplicados aquí.
+   Todo se genera desde SHOES (data/shoes.json, cargado por js/shoes.js): no hay datos duplicados aquí.
    ========================================================================== */
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -22,7 +22,7 @@ const CARD_STATS = [
   ["grip", "fill-neon"],
   ["comodidad", "fill-blue"],
   ["durabilidad", "fill-yellow"],
-  ["estilo", "fill-orange"],
+  ["amortiguacion", "fill-orange"],
 ];
 const REC_ORDER = { yes: 0, ok: 1, no: 2 };
 const REC_TAG = { yes: ["good", "✓"], ok: ["ok", "~"], no: ["bad", "✗"] };
@@ -51,7 +51,6 @@ function cardHTML(s, i) {
       <div class="card-body">
         <div class="card-brand">${s.brand}</div>
         <h3 class="card-name">${s.name}</h3>
-        <div class="card-conf">${confidenceBadge(s)}</div>
         <div class="card-stats">${stats}</div>
         <div class="card-player">${players}</div>
         <div class="card-footer">
@@ -189,9 +188,7 @@ function openModal(id) {
     </div>
     <div class="modal-body">
       <div class="modal-section-title">Puntuaciones · Total ${fmt(avgScore(s))}/10</div>
-      <div class="card-conf">${confidenceBadge(s)}</div>
       <div class="modal-scores">${scores}</div>
-      ${sourcesHTML(s)}
       <div class="modal-section-title">Pros y Contras</div>
       <div class="pros-cons">
         <ul class="pros-list">${s.pros.map((p) => `<li>${p}</li>`).join("")}</ul>
@@ -240,7 +237,7 @@ function initModal() {
 
 /* ---------- INIT ---------- */
 
-document.addEventListener("DOMContentLoaded", () => {
+onShoesReady(() => {
   renderTicker();
   renderCards();
   renderRankings();

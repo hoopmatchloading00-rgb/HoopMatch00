@@ -1,0 +1,932 @@
+[
+  {
+    "id": "nike-kyrie-infinity",
+    "brand": "Nike",
+    "name": "Kyrie Infinity",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Excelente amortiguación y soporte en un calzado seguro.",
+    "description": "Zapatilla de corte medio con ajuste seguro, destacada por su configuración Zoom Air y gran contención lateral.",
+    "scores": {
+      "grip": 8.5,
+      "comodidad": 8.5,
+      "amortiguacion": 9.5,
+      "durabilidad": 8.5,
+      "rendimiento": 8.8
+    },
+    "courts": {
+      "indoor": 8.5,
+      "outdoor": 7
+    },
+    "weightG": 383,
+    "sole": "Patrón multidireccional grabado en goma",
+    "cushion": "Phylon, unidad Zoom Air, Zoom Strobel",
+    "ankle": {
+      "label": "Medio",
+      "level": 2
+    },
+    "price": 140,
+    "bestFor": "Bases / Escoltas / Pivots",
+    "pros": [
+      "Excelente amortiguación con Zoom Air",
+      "Gran sujeción y contención lateral",
+      "Combinación de materiales premium"
+    ],
+    "cons": [
+      "Ajuste inicial muy ceñido",
+      "Tracción necesita tiempo de adaptación",
+      "Rendimiento dispar en exteriores"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "ok",
+      "pivot": "yes"
+    },
+    "fit": {
+      "wide": "Ajuste muy ceñido para pie ancho",
+      "size": "Pide media talla más"
+    },
+    "affiliate": "#",
+    "releaseYear": 2021,
+    "supportScore": 9
+  },
+  {
+    "id": "adidas-harden-7",
+    "brand": "Adidas",
+    "name": "Harden 7",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Amortiguación híbrida Boost + Lightstrike con tracción élite y soporte sólido",
+    "description": "",
+    "scores": {
+      "grip": 9,
+      "comodidad": 8.5,
+      "amortiguacion": 9,
+      "durabilidad": 7,
+      "rendimiento": 8.6
+    },
+    "courts": {
+      "indoor": 9,
+      "outdoor": 6.5
+    },
+    "weightG": 455,
+    "sole": "Goma sólida y translúcida con patrones herringbone y radial",
+    "cushion": "Boost en talón + Lightstrike en ante-pie con shank",
+    "ankle": {
+      "label": "Medio-alto",
+      "level": 2.5
+    },
+    "price": 160,
+    "bestFor": "Aleros / Pivots ligeros / Jugadores versátiles",
+    "pros": [
+      "Tracción élite en todas direcciones",
+      "Amortiguación híbrida muy equilibrada",
+      "Soporte y contención excelentes",
+      "Ajuste verdadero a talla"
+    ],
+    "cons": [
+      "Materiales poco transpirables",
+      "Suela no duradera en outdoor",
+      "Peso elevado para bases"
+    ],
+    "positions": {
+      "base": "ok",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "ok"
+    },
+    "fit": {
+      "fast": "Puede sentirse pesada para estilos muy explosivos",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2023,
+    "supportScore": 9
+  },
+  {
+    "id": "jordan-brand-air-jordan-36",
+    "brand": "Jordan Brand",
+    "name": "Air Jordan 36",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Zoom Strobel de largo completo + Zoom doble en ante-pie con tracción herringbone élite",
+    "description": "",
+    "scores": {
+      "grip": 9,
+      "comodidad": 9,
+      "amortiguacion": 9.5,
+      "durabilidad": 6,
+      "rendimiento": 8.7
+    },
+    "courts": {
+      "indoor": 9,
+      "outdoor": 4.5
+    },
+    "weightG": 380,
+    "sole": "Goma blanda con patrón herringbone de largo completo",
+    "cushion": "Zoom Air Strobel de largo completo + Zoom doble en ante-pie",
+    "ankle": {
+      "label": "Alto",
+      "level": 3
+    },
+    "price": 185,
+    "bestFor": "Aleros / Pivots ligeros / Jugadores versátiles",
+    "pros": [
+      "Tracción herringbone élite en todas direcciones",
+      "Amortiguación Zoom Strobel muy reactiva",
+      "Upper ligero y transpirable",
+      "Soporte y contención excelentes"
+    ],
+    "cons": [
+      "Ajuste estrecho, pide media talla más",
+      "Suela blanda, no duradera en outdoor",
+      "Sensación inestable por Zoom protruyente"
+    ],
+    "positions": {
+      "base": "ok",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "ok"
+    },
+    "fit": {
+      "fast": "Puede sentirse pesada para estilos muy explosivos",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2021,
+    "supportScore": 9.1
+  },
+  {
+    "id": "under-armour-curry-11",
+    "brand": "Under Armour",
+    "name": "Curry 11",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Tracción Flow élite + amortiguación dual-density con ajuste ligero y seguro para bases rápidos",
+    "description": "",
+    "scores": {
+      "grip": 9.5,
+      "comodidad": 8.5,
+      "amortiguacion": 9,
+      "durabilidad": 6,
+      "rendimiento": 8.6
+    },
+    "courts": {
+      "indoor": 9.5,
+      "outdoor": 2
+    },
+    "weightG": 340,
+    "sole": "Flow foam (sin goma) con siping multidireccional",
+    "cushion": "Flow foam dual-density con shank dividido en ante-pie",
+    "ankle": {
+      "label": "Bajo-medio",
+      "level": 1.5
+    },
+    "price": 160,
+    "bestFor": "Bases / Escoltas / Jugadores rápidos y ágiles",
+    "pros": [
+      "Tracción Flow élite en todas direcciones",
+      "Amortiguación dual-density más cómoda y reactiva",
+      "Upper ligero, transpirable y con buen ajuste",
+      "Soporte y contención excelentes"
+    ],
+    "cons": [
+      "Suela Flow muy blanda, no duradera en outdoor",
+      "Ajuste estrecho, puede pedir media talla más",
+      "Sensación de bajo volumen para pie ancho"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "ok",
+      "pivot": "no"
+    },
+    "fit": {
+      "inside": "No recomendada para pívots o juego interior físico",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2023,
+    "supportScore": 8.7
+  },
+  {
+    "id": "nike-lebron-21",
+    "brand": "Nike",
+    "name": "LeBron 21",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Zoom Turbo + Zoom Air con tracción élite y soporte mejorado para jugadores versátiles",
+    "description": "",
+    "scores": {
+      "grip": 9,
+      "comodidad": 8.5,
+      "amortiguacion": 9,
+      "durabilidad": 8.5,
+      "rendimiento": 8.8
+    },
+    "courts": {
+      "indoor": 9,
+      "outdoor": 4
+    },
+    "weightG": 403,
+    "sole": "Goma translúcida blanda con patrón multicapa",
+    "cushion": "Zoom Turbo en ante-pie + Zoom Air en talón con shank TPU",
+    "ankle": {
+      "label": "Bajo-medio",
+      "level": 1.5
+    },
+    "price": 200,
+    "bestFor": "Aleros / Pivots ligeros / Jugadores versátiles",
+    "pros": [
+      "Tracción élite en todas direcciones",
+      "Amortiguación Zoom muy equilibrada",
+      "Soporte y contención mejorados",
+      "Upper premium con buen ajuste"
+    ],
+    "cons": [
+      "Precio elevado",
+      "Poco transpirable",
+      "Suela blanda, no duradera en outdoor"
+    ],
+    "positions": {
+      "base": "ok",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "ok"
+    },
+    "fit": {
+      "fast": "Puede sentirse pesada para estilos muy explosivos",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2023,
+    "supportScore": 9
+  },
+  {
+    "id": "nike-zoom-freak-5",
+    "brand": "Nike",
+    "name": "Zoom Freak 5",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Tracción élite con Zoom encapsulado y base ancha para jugadores rápidos y versátiles",
+    "description": "",
+    "scores": {
+      "grip": 9,
+      "comodidad": 8.5,
+      "amortiguacion": 8.5,
+      "durabilidad": 7,
+      "rendimiento": 8.3
+    },
+    "courts": {
+      "indoor": 9,
+      "outdoor": 5.5
+    },
+    "weightG": 335,
+    "sole": "Goma sólida con patrón herringbone + Smear en talón",
+    "cushion": "Zoom Air encapsulado en ante-pie + phylon firme",
+    "ankle": {
+      "label": "Bajo",
+      "level": 1
+    },
+    "price": 140,
+    "bestFor": "Bases / Escoltas / Aleros / Jugadores rápidos",
+    "pros": [
+      "Tracción élite en todas direcciones",
+      "Amortiguación baja y reactiva",
+      "Base ancha con buen soporte",
+      "Upper ligero y cómodo"
+    ],
+    "cons": [
+      "Ajuste estrecho, puede pedir media talla más",
+      "Materiales sintéticos, poco transpirables",
+      "Suela no duradera en outdoor"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "ok"
+    },
+    "fit": {
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2023,
+    "supportScore": 7.9
+  },
+  {
+    "id": "nike-sabrina-3",
+    "brand": "Nike",
+    "name": "Sabrina 3",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Excelente tracción y sensación de cancha en un perfil bajo",
+    "description": "Zapatilla ágil de corte bajo que prioriza la sensación de cancha y contención lateral, ideal para jugadores rápidos.",
+    "scores": {
+      "grip": 8.5,
+      "comodidad": 8.5,
+      "amortiguacion": 8,
+      "durabilidad": 7,
+      "rendimiento": 8.2
+    },
+    "courts": {
+      "indoor": 8.5,
+      "outdoor": 3
+    },
+    "weightG": 352,
+    "sole": "Patrón radial de goma translúcida",
+    "cushion": "Espuma Cushlon 3.0 y Zoom Air",
+    "ankle": {
+      "label": "Bajo",
+      "level": 1
+    },
+    "price": 135,
+    "bestFor": "Bases / Escoltas",
+    "pros": [
+      "Excelente tracción en canchas limpias",
+      "Gran sensación de cancha y ligereza",
+      "Estabilidad y contención lateral sobresalientes",
+      "Amortiguación reactiva en el antepié"
+    ],
+    "cons": [
+      "Durabilidad pobre en canchas exteriores",
+      "Materiales superiores se sienten baratos",
+      "Baja absorción de impactos generales"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "ok",
+      "pivot": "no"
+    },
+    "fit": {
+      "heavy": "Jugadores pesados deben evitarla por baja absorción de impactos",
+      "inside": "No recomendada para pívots o juego físico interior",
+      "wide": "Ajuste algo estrecho; pie ancho puede necesitar media talla más",
+      "size": "Fiel a la talla para la mayoría; pie ancho pedir media talla más",
+      "dust": {
+        "note": "La suela translúcida atrae polvo y pierde tracción",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2025,
+    "supportScore": 9
+  },
+  {
+    "id": "new-balance-two-wxy-v5",
+    "brand": "New Balance",
+    "name": "Two WXY v5",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Tracción élite con doble densidad FuelCell + Fresh Foam y plataforma ancha para jugadores versátiles",
+    "description": "",
+    "scores": {
+      "grip": 9,
+      "comodidad": 8.5,
+      "amortiguacion": 8.5,
+      "durabilidad": 7,
+      "rendimiento": 8.4
+    },
+    "courts": {
+      "indoor": 9.5,
+      "outdoor": 8
+    },
+    "weightG": 390,
+    "sole": "Goma dura con patrón de succión circular",
+    "cushion": "FuelCell en ante-pie + Fresh Foam en talón con placa TPU",
+    "ankle": {
+      "label": "Medio",
+      "level": 2
+    },
+    "price": 120,
+    "bestFor": "Todas las posiciones / Jugadores versátiles",
+    "pros": [
+      "Tracción élite en todas direcciones",
+      "Amortiguación dual-density muy versátil",
+      "Plataforma ancha con gran estabilidad",
+      "Excelente relación calidad-precio"
+    ],
+    "cons": [
+      "Materiales sintéticos, no premium",
+      "Requiere periodo de adaptación",
+      "Amortiguación alta, poco court feel"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "yes"
+    },
+    "fit": {
+      "size": "Fiel a la talla",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2024,
+    "supportScore": 8.7
+  },
+  {
+    "id": "nike-kd-18",
+    "brand": "Nike",
+    "name": "KD 18",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Tracción élite con Cushlon + Zoom Air y soporte mejorado para jugadores versátiles y pesados",
+    "description": "",
+    "scores": {
+      "grip": 9,
+      "comodidad": 8.5,
+      "amortiguacion": 8.5,
+      "durabilidad": 8,
+      "rendimiento": 8.6
+    },
+    "courts": {
+      "indoor": 9,
+      "outdoor": 6
+    },
+    "weightG": 422,
+    "sole": "Goma blanda con patrón topográfico ondulado",
+    "cushion": "Cushlon full-length + Zoom Air en ante-pie con shank TPU",
+    "ankle": {
+      "label": "Bajo",
+      "level": 1
+    },
+    "price": 160,
+    "bestFor": "Aleros / Pivots / Jugadores pesados y versátiles",
+    "pros": [
+      "Tracción élite en todas direcciones",
+      "Amortiguación Cushlon + Zoom muy cómoda",
+      "Soporte y contención mejorados",
+      "Upper transpirable y cómodo"
+    ],
+    "cons": [
+      "Peso elevado, más pesado que promedio",
+      "Ajuste estrecho, no para pie ancho",
+      "Mínimas actualizaciones respecto a KD 17"
+    ],
+    "positions": {
+      "base": "ok",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "yes"
+    },
+    "fit": {
+      "fast": "Puede sentirse pesada para estilos muy explosivos",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2025,
+    "supportScore": 8.8
+  },
+  {
+    "id": "nike-g-t-hustle-3",
+    "brand": "Nike",
+    "name": "G.T. Hustle 3",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Amortiguación máxima con Zoom Air doble + React y tracción fiable para jugadores que buscan protección de impacto",
+    "description": "",
+    "scores": {
+      "grip": 8,
+      "comodidad": 8.5,
+      "amortiguacion": 9.5,
+      "durabilidad": 6.5,
+      "rendimiento": 8.2
+    },
+    "courts": {
+      "indoor": 8.5,
+      "outdoor": 5.5
+    },
+    "weightG": 370,
+    "sole": "Goma blanda con patrón radial y cutouts",
+    "cushion": "Zoom Air strobel + Zoom Air U-shaped + React en talón con insole ZoomX",
+    "ankle": {
+      "label": "Medio",
+      "level": 2
+    },
+    "price": 190,
+    "bestFor": "Bases ligeros / Aleros / Jugadores que buscan amortiguación máxima",
+    "pros": [
+      "Amortiguación máxima con Zoom Air doble + React",
+      "Tracción fiable en indoor",
+      "Upper Flyknit transpirable y cómodo",
+      "Peso ligero para su categoría"
+    ],
+    "cons": [
+      "Suela blanda, no duradera en outdoor",
+      "Stack alto, poco court feel",
+      "Contención y soporte inconsistentes para jugadores pesados"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "ok",
+      "pivot": "ok"
+    },
+    "fit": {
+      "heavy": "No es la mejor opción para jugadores pesados",
+      "inside": "No recomendada para pívots o juego interior físico",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2024,
+    "supportScore": 7.6
+  },
+  {
+    "id": "jordan-brand-luka-77",
+    "brand": "Jordan Brand",
+    "name": "Luka 77",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Tracción y durabilidad élite para outdoor con IsoPlate y Zoom Air a precio accesible",
+    "description": "",
+    "scores": {
+      "grip": 8.5,
+      "comodidad": 8,
+      "amortiguacion": 7.5,
+      "durabilidad": 9,
+      "rendimiento": 8.2
+    },
+    "courts": {
+      "indoor": 8,
+      "outdoor": 9.5
+    },
+    "weightG": 349,
+    "sole": "Goma dura con patrón herringbone para outdoor",
+    "cushion": "Zoom Air en ante-pie + EVA full-length con IsoPlate",
+    "ankle": {
+      "label": "Bajo",
+      "level": 1
+    },
+    "price": 100,
+    "bestFor": "Bases / Escoltas / Aleros / Jugadores outdoor",
+    "pros": [
+      "Tracción y durabilidad élite para outdoor",
+      "IsoPlate funcional sin sobre-restricción",
+      "Materiales resistentes a precio accesible",
+      "Ligera y con buen court feel"
+    ],
+    "cons": [
+      "Amortiguación mínima, no para jugadores pesados",
+      "Ajuste estrecho, pide media talla más",
+      "Traction sensible al polvo en indoor"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "no"
+    },
+    "fit": {
+      "heavy": "No es la mejor opción para jugadores pesados",
+      "inside": "No recomendada para pívots o juego interior físico",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2025,
+    "supportScore": 8
+  },
+  {
+    "id": "nike-lebron-witness-9",
+    "brand": "Nike",
+    "name": "LeBron Witness 9",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "ReactX full-length con tracción fiable y durabilidad outdoor a precio accesible",
+    "description": "",
+    "scores": {
+      "grip": 8,
+      "comodidad": 8.5,
+      "amortiguacion": 8.5,
+      "durabilidad": 7.5,
+      "rendimiento": 8.2
+    },
+    "courts": {
+      "indoor": 7.5,
+      "outdoor": 7
+    },
+    "weightG": 428,
+    "sole": "Goma dura con patrón herringbone para outdoor",
+    "cushion": "ReactX full-length con insole acolchada y shank TPU",
+    "ankle": {
+      "label": "Bajo",
+      "level": 1
+    },
+    "price": 105,
+    "bestFor": "Bases / Escoltas / Aleros / Jugadores outdoor y principiantes",
+    "pros": [
+      "Tracción fiable en indoor",
+      "ReactX full-length cómoda y reactiva",
+      "Excelente durabilidad outdoor",
+      "Precio accesible para rendimiento"
+    ],
+    "cons": [
+      "Peso elevado, más pesado que promedio",
+      "Traction sensible al polvo",
+      "Materiales sintéticos, poco transpirables"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "yes",
+      "pivot": "ok"
+    },
+    "fit": {
+      "fast": "Puede sentirse pesada para estilos muy explosivos",
+      "size": "Fiel a la talla",
+      "dust": {
+        "note": "Pierde grip con polvo",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2025,
+    "supportScore": 8.5
+  },
+  {
+    "id": "adidas-dame-x",
+    "brand": "Adidas",
+    "name": "Dame X",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Tracción interior excelente y soporte sólido a precio accesible",
+    "description": "Zapatilla económica y cómoda, con buen soporte y agarre interior, pero limitada para exteriores y jugadores pesados.",
+    "scores": {
+      "grip": 8,
+      "comodidad": 8,
+      "amortiguacion": 7.5,
+      "durabilidad": 8,
+      "rendimiento": 8
+    },
+    "courts": {
+      "indoor": 8,
+      "outdoor": 4
+    },
+    "weightG": 414,
+    "sole": "Goma sólida con líneas cortas",
+    "cushion": "Lightstrike de longitud completa",
+    "ankle": {
+      "label": "Medio",
+      "level": 2
+    },
+    "price": 90,
+    "bestFor": "Principiantes / jugadores versátiles",
+    "pros": [
+      "Excelente agarre en cancha interior",
+      "Buen soporte y contención",
+      "Cómoda desde el inicio",
+      "Precio muy competitivo"
+    ],
+    "cons": [
+      "Baja protección de impactos en antepié",
+      "Poco retorno de energía",
+      "No recomendable para uso exterior"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "ok",
+      "pivot": "ok"
+    },
+    "fit": {
+      "heavy": "No es la mejor opción para jugadores pesados",
+      "fast": "Puede sentirse pesada para estilos muy explosivos",
+      "size": "Generalmente talla real; algunas reviews recomiendan media talla menos",
+      "dust": {
+        "note": "Necesita limpieza rápida en superficies con polvo",
+        "from": 2
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2025,
+    "supportScore": 8.5
+  },
+  {
+    "id": "nike-g-t-cut-academy",
+    "brand": "Nike",
+    "name": "G.T. Cut Academy",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Tracción excelente y amortiguación cómoda para jugadores rápidos",
+    "description": "Zapatilla económica para bases y escoltas, con gran agarre interior, buena amortiguación y materiales de durabilidad limitada.",
+    "scores": {
+      "grip": 9,
+      "comodidad": 8,
+      "amortiguacion": 8,
+      "durabilidad": 6,
+      "rendimiento": 8
+    },
+    "courts": {
+      "indoor": 8.5,
+      "outdoor": 6.5
+    },
+    "weightG": 342,
+    "sole": "Goma sólida con dibujo espiga",
+    "cushion": "Renew de doble densidad y Zoom Air delantero",
+    "ankle": {
+      "label": "Bajo-medio",
+      "level": 1.5
+    },
+    "price": 95,
+    "bestFor": "Bases / Escoltas",
+    "pros": [
+      "Tracción excelente en cancha limpia",
+      "Amortiguación cómoda y protectora",
+      "Peso ligero y sensación ágil",
+      "Precio accesible"
+    ],
+    "cons": [
+      "Materiales de calidad básica",
+      "Baja transpirabilidad",
+      "Soporte torsional limitado"
+    ],
+    "positions": {
+      "base": "yes",
+      "escolta": "yes",
+      "alero": "ok",
+      "pivot": "no"
+    },
+    "fit": {
+      "fast": "Puede perder agilidad para jugadores que necesiten soporte estructural máximo",
+      "inside": "No recomendada para pívots o juego interior físico",
+      "wide": "Puede resultar estrecha para pies anchos",
+      "size": "Talla real; media talla más si buscas espacio adicional",
+      "dust": {
+        "note": "Puede perder agarre con polvo; requiere limpiadas rápidas",
+        "from": 2
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2024,
+    "supportScore": 8
+  },
+  {
+    "id": "nike-lebron-23",
+    "brand": "Nike",
+    "name": "LeBron 23",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Amortiguación ZoomX, estabilidad superior y retorno de energía explosivo",
+    "description": "Zapatilla premium para jugadores grandes, con gran amortiguación, soporte sobresaliente y excelente tracción interior, pero pesada y poco apta para exteriores.",
+    "scores": {
+      "grip": 8,
+      "comodidad": 8,
+      "amortiguacion": 8.5,
+      "durabilidad": 6.5,
+      "rendimiento": 8
+    },
+    "courts": {
+      "indoor": 8,
+      "outdoor": 3
+    },
+    "weightG": 439,
+    "sole": "Goma translúcida Wavebone",
+    "cushion": "ZoomX drop-in, Cushlon 3.0 y placa de carbono",
+    "ankle": {
+      "label": "Alto",
+      "level": 3
+    },
+    "price": 210,
+    "bestFor": "Aleros / Pivots",
+    "pros": [
+      "Amortiguación excepcionalmente protectora",
+      "Estabilidad y soporte sobresalientes",
+      "Gran retorno de energía",
+      "Lockdown muy seguro"
+    ],
+    "cons": [
+      "Muy pesada para su categoría",
+      "Tracción sensible al polvo",
+      "Precio elevado",
+      "Poco transpirable"
+    ],
+    "positions": {
+      "base": "ok",
+      "escolta": "ok",
+      "alero": "yes",
+      "pivot": "yes"
+    },
+    "fit": {
+      "fast": "Puede sentirse pesada y torpe para bases explosivos",
+      "size": "Media talla menos para la mayoría; talla habitual para pies anchos",
+      "dust": {
+        "note": "Pierde agarre en canchas polvorientas y requiere limpieza frecuente",
+        "from": 1
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2025,
+    "supportScore": 9
+  },
+  {
+    "id": "nike-aone",
+    "brand": "Nike",
+    "name": "A'One",
+    "emoji": "👟",
+    "image": "",
+    "images": [],
+    "tagline": "Amortiguación Cushlon excelente, gran estabilidad y tracción multidireccional",
+    "description": "Zapatilla estable y cómoda para interiores, con excelente amortiguación y agarre, pero ajuste estrecho y suela débil para exteriores.",
+    "scores": {
+      "grip": 8,
+      "comodidad": 8,
+      "amortiguacion": 8.5,
+      "durabilidad": 6,
+      "rendimiento": 7.9
+    },
+    "courts": {
+      "indoor": 8,
+      "outdoor": 4.5
+    },
+    "weightG": 366,
+    "sole": "Goma serrada multidireccional",
+    "cushion": "Cushlon 3.0 y Phylon EVA",
+    "ankle": {
+      "label": "Alto",
+      "level": 3
+    },
+    "price": 115,
+    "bestFor": "Aleros / Pivots",
+    "pros": [
+      "Excelente absorción de impactos",
+      "Tracción multidireccional confiable",
+      "Estabilidad y soporte sobresalientes",
+      "Buena relación calidad-precio"
+    ],
+    "cons": [
+      "Ajuste estrecho y puntera baja",
+      "Materiales poco transpirables",
+      "Durabilidad exterior limitada"
+    ],
+    "positions": {
+      "base": "ok",
+      "escolta": "ok",
+      "alero": "yes",
+      "pivot": "yes"
+    },
+    "fit": {
+      "fast": "Puede sentirse rígida para estilos muy ágiles",
+      "wide": "Puede sentirse estrecha en pies anchos",
+      "size": "Pide media talla más",
+      "dust": {
+        "note": "Pierde rendimiento con polvo y requiere limpieza",
+        "from": 2
+      }
+    },
+    "affiliate": "#",
+    "releaseYear": 2025,
+    "supportScore": 8.5
+  }
+]

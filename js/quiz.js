@@ -271,7 +271,6 @@ function mainCardHTML(r, second) {
         <div class="result-brand">${s.brand}</div>
         <h3 class="result-name">${s.name}</h3>
         <p class="result-tagline">${s.tagline}</p>
-        <div class="result-conf">${confidenceBadge(s)}</div>
         <div class="match">
           <div class="match-num">${r.match}<span>%</span></div>
           <div class="match-side">
@@ -305,7 +304,6 @@ function runnerCardHTML(r, pos, first) {
         </div>
         <div class="runner-match">${r.match}%<small>afinidad</small></div>
       </div>
-      <div class="result-conf">${confidenceBadge(s)}</div>
       ${list(r.reasons.slice(0, 2), "reason-list")}
       ${r.warnings.length ? list(r.warnings.slice(0, 2), "warn-list") : ""}
       <div class="result-meta"><strong>${formatPrice(s.price)}</strong> · ${s.weightG} g</div>
@@ -402,7 +400,7 @@ function restart() {
 
 /* ---------- INIT ---------- */
 
-document.addEventListener("DOMContentLoaded", () => {
+onShoesReady(() => {
   $("options").addEventListener("click", (e) => {
     const btn = e.target.closest(".option");
     if (btn) selectOption(btn.dataset.id);

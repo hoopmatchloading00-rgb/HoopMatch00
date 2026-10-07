@@ -1,6 +1,6 @@
 /* ==========================================================================
    HoopMatch · compare.js  (solo compare.html)
-   Lee los datos de SHOES (js/shoes.js). Admite enlaces tipo compare.html?a=kyrie&b=harden
+   Lee los datos de SHOES (data/shoes.json). Admite enlaces tipo compare.html?a=nike-kyrie-infinity&b=adidas-harden-vol-7
    ========================================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -8,12 +8,12 @@ const $ = (id) => document.getElementById(id);
 const COLORS = { a: "#00e5ff", b: "#bf5fff" };
 
 const PRESETS = [
-  ["kyrie", "harden", "Kyrie vs Harden"],
-  ["jordan", "lebron", "Jordan 36 vs LeBron 21"],
-  ["curry", "kyrie", "Curry 11 vs Kyrie"],
-  ["harden", "freak", "Harden vs Freak 5"],
-  ["jordan", "kyrie", "Jordan 36 vs Kyrie"],
-  ["lebron", "freak", "LeBron 21 vs Freak 5"],
+  ["nike-kyrie-infinity", "adidas-harden-vol-7", "Kyrie vs Harden"],
+  ["jordan-brand-air-jordan-36", "nike-lebron-21", "Jordan 36 vs LeBron 21"],
+  ["under-armour-curry-11", "nike-kyrie-infinity", "Curry 11 vs Kyrie"],
+  ["adidas-harden-vol-7", "nike-zoom-freak-5", "Harden vs Freak 5"],
+  ["jordan-brand-air-jordan-36", "nike-kyrie-infinity", "Jordan 36 vs Kyrie"],
+  ["nike-lebron-21", "nike-zoom-freak-5", "LeBron 21 vs Freak 5"],
 ];
 
 const REC_SCORE = { yes: 3, ok: 1, no: 0 };
@@ -279,7 +279,6 @@ function buildSpecsTable(a, b) {
   const text = (v) => `<span style="color:var(--text)">${v}</span>`;
 
   const specRows = [
-    ["Fiabilidad de las notas", a, b, confidenceBadge],
     ["Peso", `${a.weightG} g`, `${b.weightG} g`, text],
     ["Tipo de suela", a.sole, b.sole, text],
     ["Tecnología cushion", a.cushion, b.cushion, text],
@@ -347,7 +346,7 @@ function buildCTA(a, b) {
 
 /* ---------- INIT ---------- */
 
-document.addEventListener("DOMContentLoaded", () => {
+onShoesReady(() => {
   initSelectors();
   const params = new URLSearchParams(location.search);
   const a = params.get("a");
